@@ -2,19 +2,17 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.mouse = 'a'
-vim.opt.guicursor= ''
+vim.opt.guicursor= 'a:block'
 vim.opt.tabstop=4 
 vim.opt.shiftwidth=4
 vim.opt.termguicolors = true
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd.colorscheme "catppuccin"
 
-vim.g.mapleader = "@"
+vim.g.mapleader = " "
 vim.g['t_Co'] = 256
 vim.g['airline_theme']='base16'
 vim.g['airline#extensions#whitespace#enabled']= 0
 
-vim.keymap.set('n', '<leader>F', '<cmd> ex .<cr>')
-vim.keymap.set('n', '<leader>ff', '<cmd> Telescope find_files<cr>')
 
 --Set completeopt to have a better completion experience
 -- :help completeopt
@@ -23,7 +21,6 @@ vim.keymap.set('n', '<leader>ff', '<cmd> Telescope find_files<cr>')
 -- noselect: Do not select, force to select one from the menu
 -- shortness: avoid showing extra messages when using completion
 -- updatetime: set updatetime for CursorHold
-
 vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
 vim.opt.shortmess = vim.opt.shortmess + { c = true}
 vim.api.nvim_set_option('updatetime', 300) 
@@ -37,4 +34,10 @@ set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
-require("mason").setup()
+-- Keymaps
+vim.keymap.set('n', '<leader>F', '<cmd> ex .<cr>')
+vim.keymap.set('n', '<leader>ff', '<cmd> Telescope find_files<cr>')
+vim.keymap.set('n', '<leader>gg', '<cmd> Neogit<cr>')
+vim.keymap.set('n', '<C-t>', '<C-w>v')
+vim.keymap.set('n', '<leader>l', '<C-w>l')
+vim.keymap.set('n', '<leader>h', '<C-w>h')

@@ -1,5 +1,6 @@
+-- Treesitter
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "rust", "go", "javascript", "python"},
+  ensure_installed = { "c", "lua", "rust", "go", "javascript", "python", "vimdoc"},
   sync_install = false,
   auto_install = false,
   highlight = {
@@ -8,8 +9,16 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- Telescope
 require('telescope').setup{
 	defaults = {
 		file_ignore_patterns = {"node_modules", ".git", "__pycache__", "target"}
 	}
 }
+
+-- Neogit
+local neogit = require'neogit'
+neogit.setup({})
+
+-- Mason
+require("mason").setup()
