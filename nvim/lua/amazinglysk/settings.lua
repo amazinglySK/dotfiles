@@ -10,8 +10,6 @@ vim.cmd.colorscheme "catppuccin"
 
 vim.g.mapleader = " "
 vim.g['t_Co'] = 256
-vim.g['airline_theme']='base16'
-vim.g['airline#extensions#whitespace#enabled']= 0
 
 
 --Set completeopt to have a better completion experience

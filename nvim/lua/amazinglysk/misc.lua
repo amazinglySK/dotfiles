@@ -22,3 +22,6 @@ neogit.setup({})
 
 -- Mason
 require("mason").setup()
+
+-- Lualine
+require('lualine').setup()

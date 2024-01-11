@@ -9,8 +9,10 @@ return require('packer').startup(function(use)
 
 	-- Ricing
 	use { "catppuccin/nvim", as = "catppuccin" }
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 	use 'ap/vim-css-color'
 	
 	-- Fuzzy finder
@@ -50,6 +52,5 @@ return require('packer').startup(function(use)
 			"sindrets/diffview.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
-		config = true
 	}
 end)
